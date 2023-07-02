@@ -4,6 +4,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
 <h1>Hello World!!!</h1>
+<h2>test</h2>
 </template>
 
 <style scoped>
