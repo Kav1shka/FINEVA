@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const FineSchema=new mongoose.Schema(
+const FineDetailsSchema=new mongoose.Schema(
     {
         FineDate:{
             type:String,
@@ -29,5 +29,5 @@ const FineSchema=new mongoose.Schema(
     }
 )
 
-const FineDetails=mongoose.model("FineDetails",FineSchema);
+const FineDetails=mongoose.model("FineDetails",FineDetailsSchema);
 module.exports=FineDetails;
