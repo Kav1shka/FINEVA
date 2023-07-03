@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+<<<<<<< HEAD
 import HelloWorld from './components/HelloWorld.vue'
 </script>
 
@@ -82,4 +83,15 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 }
+=======
+</script>
+
+<template>
+<h1>Hello World!!!</h1>
+<h2>test</h2>
+</template>
+
+<style scoped>
+
+>>>>>>> main
 </style>
