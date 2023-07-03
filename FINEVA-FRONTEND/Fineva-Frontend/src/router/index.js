@@ -6,22 +6,22 @@ const router = createRouter({
     {
       path:"/",
       name:"Home",
-      component:()=>import('../components/Home.vue')
+      component:()=>import('../views/Home.vue')
     },
     {
       path:"/driverReg",
       name:"driverReg",
-      component:()=>import('../components/driverReg.vue')
+      component:()=>import('../views/driverReg.vue')
     },
     {
       path:"/policeReg",
       name:"policeReg",
-      component:()=>import('../components/policeReg.vue')
+      component:()=>import('../views/policeReg.vue')
     },
     {
       path:"/signIn",
       name:"signIn",
-      component:()=>import('../components/signin.vue')
+      component:()=>import('../views/signin.vue')
     }
   ]
 })
