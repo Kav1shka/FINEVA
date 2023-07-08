@@ -26,8 +26,8 @@ export default {
   <!-- <div className="hero-overlay bg-opacity-70"></div> -->
     <div class="mt-6 items-center lg:flex-col">
       <div class="lg:absolute lg:left-[150px] lg:top-[175px] lg:w-[40rem]">
-        <div class="text-center text-[180px] lg:text-[85px] xl:text-[108px] font-bold" style="font-family: 'Times New Roman', Times, serif;">
-          <span class="text-wt text-[150px]">FINEV</span><span class="text-ylv text-[150px]">A</span>
+        <div class="text-center text-[85px] lg:text-[85px] xl:text-[180px] font-bold" style="font-family: 'Times New Roman', Times, serif;">
+          <span class="text-wt">FINEV</span><span class="text-ylv">A</span>
         </div>
         <span class="text-justify indent-8">
           <p text-justify>
