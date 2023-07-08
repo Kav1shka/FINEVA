@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const PoliceOfficerSchema=new mongoose.Schema(
     {
-        email:{
+        Email:{
             type:String,
             required:true
         },
@@ -28,6 +28,5 @@ const PoliceOfficerSchema=new mongoose.Schema(
         }
     }
 )
-
 const PoliceOfficer=mongoose.model("PoliceOfficer",PoliceOfficerSchema);
 module.exports=PoliceOfficer;
