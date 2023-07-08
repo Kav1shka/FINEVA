@@ -22,29 +22,33 @@ export default {
 };
 </script>
 <template>
-  <div className="hero min-h-screen relative bg-mblue bg-[url('../../src/assets/image/22.png')]">
-  <div className="hero-overlay bg-opacity-70"></div>
+  <div className="hero min-h-screen relative bg-mblue bg-[url('../../src/assets/image/BG.png')]">
+  <!-- <div className="hero-overlay bg-opacity-70"></div> -->
     <div class="mt-6 items-center lg:flex-col">
-      <div class="lg:absolute lg:left-[150px] lg:top-[185px] lg:w-[40rem]">
-        <div class="text-center text-[60px] lg:text-[85px] xl:text-[108px]">
-          <span class="text-wt">FINEV</span><span class="text-ylv">A</span>
+      <div class="lg:absolute lg:left-[150px] lg:top-[175px] lg:w-[40rem]">
+        <div class="text-center text-[180px] lg:text-[85px] xl:text-[108px] font-bold" style="font-family: 'Times New Roman', Times, serif;">
+          <span class="text-wt text-[150px]">FINEV</span><span class="text-ylv text-[150px]">A</span>
         </div>
-        <span class="text-wt text-center lg:w-[30rem]">
-          Add a little bit of body texAdd a little bit of body textAdd a little
-          bit of body textAdd a little bit of body textAdd a little bit of body
-          textAdd a little bit of body textAdd a little bit of body textAdd a
-        </span>
+        <span class="text-justify indent-8">
+          <p text-justify>
+         <b>FINEVA</b> is an innovative solution that revolutionizes traffic violations and license management. 
+          It simplifies the process of paying fines and retrieving licenses, saving drivers time and effort.
+          <b>FINEVA</b> provides a convenient online platform for secure fine settlement, eliminating the need for 
+           physical visits to police stations. It also offers police officers instant access to license verification, 
+           allowing them to check driver's license validity using their License Number. This simplifies the burden of 
+           traditional procedures, promoting a seamless and user-friendly experience for both drivers and police officers.
+          </p>  </span>
       </div>
       <br /><br />
       <div
-        class="lg:absolute lg:right-[150px] lg:top-[200px] xl:right-[150px] xl:top-[220px] grid justify-items-center"
+        class="lg:absolute lg:right-[150px] lg:top-[200px] xl:right-[200px] xl:top-[280px] grid justify-items-center"
       >
-        <span class="text-ylv lg:text-lg italic">SELECT YOUR MODE TO</span>
-        <span class="block text-wt text-4xl font-bold">CONTINUE!</span>
+        <span class="text-ylv text-[30px] italic">SELECT YOUR MODE TO</span>
+        <span class="block text-wt text-[50px] font-bold">CONTINUE!</span>
 
         <br />
         <div
-          class="overflow-hidden w-[175px] h-[55px] md:w-[200px] md:h-[65px] lg:w-[225px] lg:h-[75px] xl:w-[225px] xl:h-[85] bg-ylv rounded-full border-solid border-[1px] border-wt"
+          class="overflow-hidden w-[175px] h-[55px] md:w-[200px] md:h-[65px] lg:w-[225px] lg:h-[75px] xl:w-[225px] xl:h-[85] bg-ylv rounded-full border-solid border-[0px] border-wt drop-shadow-2xl"
         >
           <div class="flex justify-between">
             <img
