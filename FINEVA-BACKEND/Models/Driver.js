@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
-
 const DriverSchema=new mongoose.Schema(
     {
-        email:{
+        Email:{
             type:String,
             required:true
         },
@@ -36,6 +35,5 @@ const DriverSchema=new mongoose.Schema(
         }
     }
 )
-
 const Driver=mongoose.model("Driver",DriverSchema);
 module.exports=Driver;

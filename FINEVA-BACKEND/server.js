@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 mongoose.set("strictQuery", false);
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8000 ;
 app.use(cors());
 
 app.use(bodyParser.json());
@@ -23,6 +23,7 @@ mongoose.connect(url, (err) => {
 });
 
 // app.use("/users", users)
+
 
 app.listen(PORT, () => {
   console.log(`server running at http://localhost:${PORT}`);
