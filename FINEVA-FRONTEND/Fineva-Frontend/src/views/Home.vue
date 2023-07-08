@@ -1,6 +1,6 @@
 <script>
-import { watchIgnorable } from "@vueuse/core";
 import store from "../store";
+
 export default {
   
   methods: {
@@ -8,25 +8,26 @@ export default {
       document.getElementById("driver").src="../../src/assets/image/d2.png"
       var user_state = "Driver";
       store.dispatch('setUserState',user_state);
-      this.$router.push('./signIn');
+      //this.$router.push('./signIn');
     },
     togglePolice(){
       document.getElementById("police").src="../../src/assets/image/p2.png"
       var user_state = "Police"
       store.dispatch('setUserState',user_state);
-      this.$router.push('./signIn');
+      //this.$router.push('./signIn');
     },
-   
+  }, 
+  mounted(){
     
-  },
+  } 
 };
 </script>
 <template>
   <div className="hero min-h-screen relative bg-mblue bg-[url('../../src/assets/image/22.png')]">
   <div className="hero-overlay bg-opacity-70"></div>
-    <div class="mt-6 items-center lg:flex-col">
-      <div class="lg:absolute lg:left-[150px] lg:top-[185px] lg:w-[40rem]">
-        <div class="text-center text-[60px] lg:text-[85px] xl:text-[108px]">
+    <div class="mt-7 items-center lg:flex-col">
+      <div class="animate-fade-right animate-duration-[1000ms] animate-ease-in animate-normal animate-fill-both lg:absolute lg:left-[150px] lg:top-[185px] lg:w-[40rem]">
+        <div class="text-center text-[60px] lg:text-[85px] xl:text-[108px] font-playfair">
           <span class="text-wt">FINEV</span><span class="text-ylv">A</span>
         </div>
         <span class="text-wt text-center lg:w-[30rem]">
@@ -37,7 +38,7 @@ export default {
       </div>
       <br /><br />
       <div
-        class="lg:absolute lg:right-[150px] lg:top-[200px] xl:right-[150px] xl:top-[220px] grid justify-items-center"
+        class="animate-fade-left animate-duration-[1000ms] animate-ease-in animate-normal animate-fill-both lg:absolute lg:right-[150px] lg:top-[200px] xl:right-[150px] xl:top-[220px] grid justify-items-center"
       >
         <span class="text-ylv lg:text-lg italic">SELECT YOUR MODE TO</span>
         <span class="block text-wt text-4xl font-bold">CONTINUE!</span>
@@ -48,11 +49,14 @@ export default {
         >
           <div class="flex justify-between">
             <img
-              class="w-[55px] h-[55px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] xl:w-[85] xl:h-[85] rounded-full" @click="toggleDriver()" id="driver"
+            data-te-animation-init
+            data-te-animation-reset="true"
+            data-te-animation="[slide-right_1s_ease-in-out]"
+              class="hover:-translate-y-1 hover:scale-110 transition ease-in-out delay-150 w-[55px] h-[55px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] xl:w-[85] xl:h-[85] rounded-full" @click="toggleDriver()" id="driver"
               src="../assets/image/driver.png"
             />
             <img
-              class="w-[55px] h-[55px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] xl:w-[85] xl:h-[85] rounded-full " @click="togglePolice()" id="police"
+              class="hover:-translate-y-1 hover:scale-110 transition ease-in-out delay-150 w-[55px] h-[55px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] xl:w-[85] xl:h-[85] rounded-full " @click="togglePolice()" id="police"
               src="../assets/image/police.png"
             />
           </div>
@@ -61,4 +65,6 @@ export default {
     </div>
   </div>
 </template>
-<style></style>
+<style>
+
+</style>
