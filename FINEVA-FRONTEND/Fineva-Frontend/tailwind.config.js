@@ -22,6 +22,7 @@ module.exports = {
     require("@tailwindcss/aspect-ratio"),
     require("tw-elements/dist/plugin.cjs"),
     require('tailwindcss-animated'),
+
   ],
   darkMode: "class"
 }
