@@ -5,7 +5,7 @@ const FineDetailsSchema=new mongoose.Schema(
         FineDate:{
             type:String,
             required:true
-        },
+        }, 
         FineDesc:{
             type:String,
             required:true
@@ -28,6 +28,5 @@ const FineDetailsSchema=new mongoose.Schema(
         }
     }
 )
-
 const FineDetails=mongoose.model("FineDetails",FineDetailsSchema);
 module.exports=FineDetails;
