@@ -60,6 +60,7 @@ export default {
               class="animate-fade animate-duration-[2000ms] animate-ease-in animate-normal hover:scale-110 transition ease-in-out delay-100 w-[55px] h-[55px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] xl:w-[85] xl:h-[85] rounded-full"
               @click="togglePolice()"
               id="police"
+
               src="../assets/image/police.png"
             />
           </div>
@@ -72,3 +73,4 @@ export default {
 #police:active {
 }
 </style>
+
