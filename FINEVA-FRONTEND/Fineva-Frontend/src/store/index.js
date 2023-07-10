@@ -2,7 +2,7 @@ import { createStore } from "vuex";
 
 const store = createStore({
     state:{
-        userState: "user",
+        userState: "DRIVER",
     },
     mutations:{
         userState_Change(state, userState){

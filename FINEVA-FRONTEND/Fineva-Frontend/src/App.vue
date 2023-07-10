@@ -1,11 +1,11 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import policeReg from './views/policeReg.vue'
+import {Animate,initTE} from "tw-elements";
+initTE({Animate});
 </script>
 
 <template>
-<!-- <RouterView/> -->
-<policeReg/>
+<RouterView/>
 </template>
 
 <style scoped>
