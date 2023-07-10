@@ -9,14 +9,14 @@ const router = createRouter({
       component:()=>import('../views/Home.vue')
     },
     {
-      path:"/driverReg",
-      name:"driverReg",
-      component:()=>import('../views/driverReg.vue')
+      path:"/driverSignIn",
+      name:"driverSignIn",
+      component:()=>import('../views/driverSignIn.vue')
     },
     {
-      path:"/policeReg",
-      name:"policeReg",
-      component:()=>import('../views/policeReg.vue')
+      path:"/policeSignIn",
+      name:"policeSignIn",
+      component:()=>import('../views/policeSignIn.vue')
     },
     {
       path:"/signIn",

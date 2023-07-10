@@ -8,13 +8,13 @@ export default {
       document.getElementById("driver").src="../../src/assets/image/d2.png"
       var user_state = "Driver";
       store.dispatch('setUserState',user_state);
-      this.$router.push('./signIn');
+      this.$router.push('./driverSignIn');
     },
     togglePolice(){
       document.getElementById("police").src="../../src/assets/image/p2.png"
       var user_state = "Police"
       store.dispatch('setUserState',user_state);
-      this.$router.push('./signIn');
+      this.$router.push('./policeSignIn');
     },
    
     
@@ -25,7 +25,7 @@ export default {
   <div className="hero min-h-screen relative bg-mblue bg-[url('../../src/assets/image/BG.png')]">
   <!-- <div className="hero-overlay bg-opacity-70"></div> -->
     <div class="mt-6 items-center lg:flex-col">
-      <div class="lg:absolute lg:left-[150px] lg:top-[175px] lg:w-[40rem]">
+      <div class="lg:absolute lg:left-[150px] lg:top-[135px] lg:w-[40rem]">
         <div class="text-center text-[85px] lg:text-[85px] xl:text-[180px] font-bold" style="font-family: 'Times New Roman', Times, serif;">
           <span class="text-wt">FINEV</span><span class="text-ylv">A</span>
         </div>
