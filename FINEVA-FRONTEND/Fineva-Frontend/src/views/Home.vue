@@ -47,17 +47,17 @@ export default {
 
         <br />
         <div
-          class="overflow-hidden w-[175px] h-full md:w-[200px] lg:w-[225px] xl:w-[225px] bg-ylv rounded-full border-solid border-[4px] border-wt"
+          class="focus:outline-none focus:shadow-outline overflow-hidden w-[175px] h-full md:w-[200px] lg:w-[225px] xl:w-[225px] bg-ylv rounded-full border-solid border-[4px] border-wt"
         >
           <div class="flex justify-between m-1">
             <img
-              class="animate-fade animate-duration-[3000ms] animate-ease-in animate-normal hover:scale-110 transition ease-in-out delay-100 w-[55px] h-[55px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] xl:w-[85] xl:h-auto rounded-full"
+              class="animate-fade animate-duration-[2000ms] animate-ease-in animate-normal hover:scale-110 transition ease-in-out delay-100 w-[55px] h-[55px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] xl:w-[85] xl:h-auto rounded-full"
               @click="toggleDriver()"
               id="driver"
               src="../assets/image/driver.png"
             />
             <img
-              class="animate-fade animate-duration-[3000ms] animate-ease-in animate-normal hover:scale-110 transition ease-in-out delay-100 w-[55px] h-[55px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] xl:w-[85] xl:h-[85] rounded-full"
+              class="animate-fade animate-duration-[2000ms] animate-ease-in animate-normal hover:scale-110 transition ease-in-out delay-100 w-[55px] h-[55px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] xl:w-[85] xl:h-[85] rounded-full"
               @click="togglePolice()"
               id="police"
               src="../assets/image/police.png"
