@@ -48,15 +48,16 @@ export default {
 
         <br />
         <div
-          class="overflow-hidden w-[175px] h-[55px] md:w-[200px] md:h-[65px] lg:w-[225px] lg:h-[75px] xl:w-[225px] xl:h-[85] bg-ylv rounded-full border-solid border-[0px] border-wt drop-shadow-2xl"
+          class="animate-bounce overflow-hidden w-[175px] h-[55px] md:w-[200px] md:h-[65px] lg:w-[225px] lg:h-[75px] xl:w-[225px] xl:h-[85] bg-ylv rounded-full border-solid border-[0px] border-wt drop-shadow-2xl"
         >
           <div class="flex justify-between">
             <img
-              class="w-[55px] h-[55px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] xl:w-[85] xl:h-[85] rounded-full" @click="toggleDriver()" id="driver"
+              class="w-[55px] h-[55px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] xl:w-[85] xl:h-[85] rounded-full hover:bg-white" @click="toggleDriver()" id="driver"
               src="../assets/image/driver.png"
             />
             <img
-              class="w-[55px] h-[55px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] xl:w-[85] xl:h-[85] rounded-full " @click="togglePolice()" id="police"
+              class="w-[55px] h-[55px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] xl:w-[85] xl:h-[85] rounded-full hover:bg-white" 
+              @click="togglePolice()" id="police"
               src="../assets/image/police.png"
             />
           </div>
