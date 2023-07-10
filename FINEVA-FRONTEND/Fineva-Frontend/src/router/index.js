@@ -22,6 +22,16 @@ const router = createRouter({
       path:"/signIn",
       name:"signIn",
       component:()=>import('../views/signin.vue')
+    },
+    {
+      path:"/driverReg",
+      name:"driverReg",
+      component:()=>import('../views/driverReg.vue')
+    },
+    {
+      path:"/policeReg",
+      name:"policeReg",
+      component:()=>import('../views/policeReg.vue')
     }
   ]
 })

@@ -3,22 +3,22 @@ import { watchIgnorable } from "@vueuse/core";
 import store from "../store";
 export default {
   
-  methods: {
-    toggleDriver(){
-      document.getElementById("driver").src="../../src/assets/image/d2.png"
-      var user_state = "Driver";
-      store.dispatch('setUserState',user_state);
-      this.$router.push('./signIn');
-    },
-    togglePolice(){
-      document.getElementById("police").src="../../src/assets/image/p2.png"
-      var user_state = "Police"
-      store.dispatch('setUserState',user_state);
-      this.$router.push('./signIn');
-    },
+  // methods: {
+  //   toggleDriver(){
+  //     document.getElementById("driver").src="../../src/assets/image/d2.png"
+  //     var user_state = "Driver";
+  //     store.dispatch('setUserState',user_state);
+  //     this.$router.push('./signIn');
+  //   },
+  //   togglePolice(){
+  //     document.getElementById("police").src="../../src/assets/image/p2.png"
+  //     var user_state = "Police"
+  //     store.dispatch('setUserState',user_state);
+  //     this.$router.push('./signIn');
+  //   },
    
     
-  },
+  // },
 };
 </script>
 <template>
@@ -59,7 +59,7 @@ export default {
           <SwitchLabel class="text-sm leading-6 text-white-600">
             Haven't Registered yet? Click Here to 
             {{ ' ' }}
-            <a href="#" class="font-semibold text-indigo-600">Sign&nbsp;Up</a>.
+            <a href="/driverReg" class="font-semibold text-indigo-600">Sign&nbsp;Up</a>.
           </SwitchLabel>
         </SwitchGroup>
       </div>
