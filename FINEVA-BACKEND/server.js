@@ -23,7 +23,8 @@ mongoose.connect(url, (err) => {
 });
 
 // app.use("/users", users)
-
+const AuthRouter = require("./Routes/AuthRoute");
+app.use("/User", AuthRouter);
 
 app.listen(PORT, () => {
   console.log(`server running at http://localhost:${PORT}`);

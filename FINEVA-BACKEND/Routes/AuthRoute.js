@@ -3,6 +3,20 @@ const router = express.Router();
 
 const {register,login}=require("../Controllers/AuthControllers");
 
-router.post("/register",register);
-router.post("/login", login);
+//Driver Routes
+router.post("/DriverRegister",function(req,res){
+    register
+});
+
+router.post("/DriverLogin",function(req,res){
+    login
+});
+//Police Officer Routes
+router.post("/PoliceOfficerRegister",function(req,res){
+    register
+});
+
+router.post("/PoliceOfficerLogin",function(req,res){
+    login
+});
 module.exports= router;

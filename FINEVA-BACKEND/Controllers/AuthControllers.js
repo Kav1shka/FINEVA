@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const authController = {
+  
   //Driver register
   Driverregister: async (req, res) => {
     try {
@@ -36,7 +37,7 @@ const authController = {
         Email ,
         Fname ,
         Lname ,
-        Password =hashedPassword,
+        Password :hashedPassword,
         NIC ,
         Province ,
         District 
@@ -49,6 +50,7 @@ const authController = {
       res.status(500).json({ message: error.message });
     }
   },
+
   //police officer register
   Officeregister: async (req, res) => {
     try {
@@ -80,7 +82,7 @@ const authController = {
         Lname ,
         Password ,
         Contact ,
-        RegiNumber=hashedRegisterNUM
+        RegiNumber:hashedRegisterNUM
       }).save();
       res.status(201).json({
         message: "You have successfully registered. Please login now",
@@ -90,6 +92,7 @@ const authController = {
       res.status(500).json({ message: error.message });
     }
   },
+
   // Driver login
   Driverlogin: async (req, res) => {
     try {
@@ -131,6 +134,7 @@ const authController = {
       res.status(500).json({ message: error.message });
     }
   },
+
   //PoliceOfficer Login
   PoliceOfficerlogin: async (req, res) => {
     try {
