@@ -9,14 +9,14 @@ router.post("/DriverRegister",function(req,res){
 });
 
 router.post("/DriverLogin",function(req,res){
-    Driverregister
+    Driverlogin
 });
 //Police Officer Routes
 router.post("/PoliceOfficerRegister",function(req,res){
-    Driverregister
+    Officeregister
 });
 
 router.post("/PoliceOfficerLogin",function(req,res){
-    Driverregister
+    PoliceOfficerlogin
 });
 module.exports= router;
