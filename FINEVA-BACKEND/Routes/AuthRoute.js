@@ -1,22 +1,22 @@
 const express=require("express");
 const router = express.Router();
 
-const {register,login}=require("../Controllers/AuthControllers");
+const {Driverregister,Officeregister,Driverlogin,PoliceOfficerlogin}=require("../Controllers/AuthControllers");
 
 //Driver Routes
 router.post("/DriverRegister",function(req,res){
-    register
+    Driverregister
 });
 
 router.post("/DriverLogin",function(req,res){
-    login
+    Driverregister
 });
 //Police Officer Routes
 router.post("/PoliceOfficerRegister",function(req,res){
-    register
+    Driverregister
 });
 
 router.post("/PoliceOfficerLogin",function(req,res){
-    login
+    Driverregister
 });
 module.exports= router;
