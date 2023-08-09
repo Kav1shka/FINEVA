@@ -19,7 +19,7 @@ const DriverSchema=new mongoose.Schema(
         },
         Contact:{
             type:String,
-            required:true
+            required:false
         },
         NIC:{
             type:String,
