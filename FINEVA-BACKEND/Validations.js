@@ -1,4 +1,4 @@
-const registerValidDriver = (Email, Fname,Lname,Password,Contact,NIC,RegiNumber)=>{
+const registerValidDriver = (Email, Fname,Lname,Password,NIC,RegiNumber)=>{
   
     if (!Email) return "Please enter your email address";
     // if (!validateEmail(email)) return "Please enter valid email";
@@ -15,7 +15,7 @@ const registerValidPoliceOfficer = (Email, Fname,Lname,Contact,RegiNumber)=>{
       if (!Fname) return "Please enter your Lname ";
       if (!Lname) return "Please enter your Contact ";
       if(!Contact) return "Please enter your NIC";
-      if (!RegiNumber) return "Please enter your Province ";
+      if (!RegiNumber) return "Please enter your RegiNumber ";
   }
  
     const DriverdloginValid = (NIC, password) =>{
@@ -27,3 +27,12 @@ const registerValidPoliceOfficer = (Email, Fname,Lname,Contact,RegiNumber)=>{
       if (!password) return "Please enter your password";
     };
    
+     
+  module.exports =  {
+    registerValidDriver,
+    registerValidPoliceOfficer,
+    DriverdloginValid,
+    DriverloginValid
+
+  };
+

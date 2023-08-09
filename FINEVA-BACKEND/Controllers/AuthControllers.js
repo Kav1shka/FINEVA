@@ -1,4 +1,4 @@
-const { registerValid, loginValid } = require("../validations.js");
+const { registerValidDriver, loginValid } = require("../validations.js");
 const Driver = require("../Models/Driver.js");
 const PoliceOfficer = require("../Models/PoliceOfficer.js");
 const bcrypt = require("bcrypt");
@@ -9,6 +9,7 @@ const authController = {
   //Driver register
   Driverregister: async (req, res) => {
     try {
+      console.log("Came Here 3");
       const Email = req.body.Email;
       const Fname = req.body.Fname;
       const Lname = req.body.Lname;
@@ -16,7 +17,7 @@ const authController = {
       const NIC = req.body.NIC;
       const Province = req.body.Province;
       const District  = req.body.District;
-      const errorMessage = registerValid(
+      const errorMessage = registerValidDriver(
       Email ,
       Fname ,
       Lname ,
@@ -32,7 +33,7 @@ const authController = {
           .status(400)
           .json({ message: "This NIC Already Uesd" });
       }
-      const hashedPassword = await bcrypt.hash(password, 10);
+      const hashedPassword = await bcrypt.hash(Password, 10);
       await new Driver({
         Email ,
         Fname ,
@@ -60,7 +61,7 @@ const authController = {
       const Password = req.body.Password;
       const Contact = req.body.Contact;
       const RegiNumber = req.body.RegiNumber;
-      const errorMessage = registerValid(
+      const errorMessage = registerValidPoliceOfficer(
       Email ,
       Fname ,
       Lname ,
@@ -97,7 +98,7 @@ const authController = {
   Driverlogin: async (req, res) => {
     try {
       const { NIC, password } = req.body;
-      const errorMessage = loginValid(NIC, password);
+      const errorMessage = DriverdloginValid(NIC, password);
       if (errorMessage) return res.status(400).json({ message: errorMessage });
 
       const driver = await Driver.findOne({ NIC });
@@ -139,7 +140,7 @@ const authController = {
   PoliceOfficerlogin: async (req, res) => {
     try {
       const { RegiNumber, password } = req.body;
-      const errorMessage = loginValid(RegiNumber, password);
+      const errorMessage = DriverloginValid(RegiNumber, password);
       if (errorMessage) return res.status(400).json({ message: errorMessage });
 
       const PoliceOfficer = await Driver.findOne({ RegiNumber });
