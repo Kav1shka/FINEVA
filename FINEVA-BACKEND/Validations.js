@@ -18,12 +18,12 @@ const registerValidPoliceOfficer = (Email, Fname,Lname,Contact,RegiNumber)=>{
       if (!RegiNumber) return "Please enter your RegiNumber ";
   }
  
-    const DriverdloginValid = (NIC, password) =>{
+    const DriverdloginValid = (NIC, Password) =>{
       if (!NIC) return "Please enter your NIC";
-      if (!password) return "Please enter your password";
+      if (!Password) return "Please enter your pas7sword";
     };
-    const DriverloginValid = (NIC, password) =>{
-      if (!NIC) return "Please enter your NIC";
+    const OfficerloginValid = (RegiNumber, password) =>{
+      if (!RegiNumber) return "Please enter your NIC";
       if (!password) return "Please enter your password";
     };
    
@@ -32,7 +32,7 @@ const registerValidPoliceOfficer = (Email, Fname,Lname,Contact,RegiNumber)=>{
     registerValidDriver,
     registerValidPoliceOfficer,
     DriverdloginValid,
-    DriverloginValid
+    OfficerloginValid
 
   };
 
