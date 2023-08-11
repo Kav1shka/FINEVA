@@ -15,7 +15,7 @@ const DriverSchema=new mongoose.Schema(
         },
         Password:{
             type:String,
-            required:true
+            required:false
         },
         Contact:{
             type:String,

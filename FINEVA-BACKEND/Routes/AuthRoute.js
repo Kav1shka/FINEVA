@@ -7,15 +7,9 @@ console.log("Came here 2");
 router.post("/DriverRegister",Driverregister);
  
 
-router.post("/DriverLogin",function(req,res){
-    Driverlogin
-});
+router.post("/DriverLogin",Driverlogin);
 //Police Officer Routes
-router.post("/PoliceOfficerRegister",function(req,res){ 
-    Officeregister
-});
+router.post("/PoliceOfficerRegister",Officeregister);
 
-router.post("/PoliceOfficerLogin",function(req,res){
-    PoliceOfficerlogin
-});
+router.post("/PoliceOfficerLogin",PoliceOfficerlogin);
 module.exports= router;
