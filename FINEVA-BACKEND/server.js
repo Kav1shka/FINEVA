@@ -24,7 +24,6 @@ mongoose.connect(url, (err) => {
 
 // app.use("/users", users)
 const AuthRouter = require("./Routes/AuthRoute");
-console.log("came Here!")
 app.use("/User", AuthRouter);
 
 app.listen(PORT, () => {
