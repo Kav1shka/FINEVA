@@ -23,7 +23,7 @@ const registerValidPoliceOfficer = (Email, Fname,Lname,Contact,RegiNumber)=>{
       if (!Password) return "Please enter your pas7sword";
     };
     const OfficerloginValid = (RegiNumber, password) =>{
-      if (!RegiNumber) return "Please enter your NIC";
+      if (!RegiNumber) return "Please enter your RegiNumber";
       if (!password) return "Please enter your password";
     };
    

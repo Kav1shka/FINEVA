@@ -1,6 +1,6 @@
-const { registerValidDriver, registerValidPoliceOfficer,DriverdloginValid,OfficerloginValid } = require("../validations.js");
+const { registerValidDriver, registerValidPoliceOfficer,DriverdloginValid,OfficerloginValid } = require("../Validations.js");
 const Driver = require("../Models/Driver.js");
-const PoliceOfficerSch = require("../Models/PoliceOfficer.js");
+const PoliceOfficer = require("../Models/PoliceOfficer.js");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
@@ -135,20 +135,22 @@ const authController = {
     }
   },
 
-  //PoliceOfficer Login
+  //PoliceOfficer Login 
   PoliceOfficerlogin: async (req, res) => {
     try {
       const { RegiNumber, Password } = req.body;
+      console.log(req.body);
       const errorMessage = OfficerloginValid(RegiNumber, Password);
+      // console.log(errorMessage);
       if (errorMessage) return res.status(400).json({ message: errorMessage });
 
-      const PoliceOfficer = await PoliceOfficerSch.findOne({ RegiNumber });
-console.log(PoliceOfficer);
-      const details = await PoliceOfficerSch.findOne(PoliceOfficer);
-      if (!PoliceOfficer)
+      const FoundPoliceOfficer = await PoliceOfficer.findOne({ RegiNumber });
+      console.log(FoundPoliceOfficer);
+      // const details = await PoliceOfficer.findOne(FoundPoliceOfficer);
+      if (!FoundPoliceOfficer)
         return res.status(400).json({ message: "Not registered NIC" });
 
-      const match = await bcrypt.compare(Password, PoliceOfficer.Password);
+      const match = await bcrypt.compare(Password, FoundPoliceOfficer.Password);
 
       console.log(match);
       if (!match) {
