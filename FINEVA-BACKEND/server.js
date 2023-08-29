@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -25,6 +24,9 @@ mongoose.connect(url, (err) => {
 // app.use("/users", users)
 const AuthRouter = require("./Routes/AuthRoute");
 app.use("/User", AuthRouter);
+
+const PaymentRouter=require("./Routes/PaymentRoute");
+app.use("/payment",PaymentRouter);
 
 app.listen(PORT, () => {
   console.log(`server running at http://localhost:${PORT}`);
