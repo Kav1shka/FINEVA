@@ -13,6 +13,7 @@ const authController = {
       const Fname = req.body.Fname;
       const Lname = req.body.Lname;
       const Password = req.body.Password;
+      const cfPassword = req.body.password2;
       const NIC = req.body.NIC;
       const Province = req.body.Province;
       const District  = req.body.District;
@@ -21,6 +22,7 @@ const authController = {
       Fname ,
       Lname ,
       Password ,
+      cfPassword,
       NIC ,
       Province ,
       District 
@@ -31,6 +33,11 @@ const authController = {
         return res
           .status(400)
           .json({ message: "This NIC Already Uesd" });
+      }
+      if (Password !== cfPassword){
+          return res
+          .status(400)
+          .json({message: "Passwords do not match"})
       }
       const hashedPassword = await bcrypt.hash(Password, 10);
       await new Driver({
@@ -57,6 +64,7 @@ const authController = {
       const Fname = req.body.Fname;
       const Lname = req.body.Lname;
       const Password = req.body.Password;
+      const cfPassword = req.body.password2;
       const Contact = req.body.Contact;
       const RegiNumber = req.body.RegiNumber;
       const errorMessage = registerValidPoliceOfficer(
@@ -64,6 +72,7 @@ const authController = {
       Fname ,
       Lname ,
       Password ,
+      cfPassword,
       Contact ,
       RegiNumber 
       )
@@ -74,14 +83,19 @@ const authController = {
           .status(400)
           .json({ message: "This email is already in use!!!!" });
       }
-      const hashedRegisterNUM = await bcrypt.hash(RegiNumber, 10);
+      if (Password !== cfPassword){
+        return res
+        .status(400)
+        .json({message: "Passwords do not match"})
+    }
+      const hashedPassword = await bcrypt.hash(Password, 10);
       await new PoliceOfficer({
         Email ,
         Fname ,
         Lname ,
-        Password ,
+        Password : hashedPassword,
         Contact ,
-        RegiNumber:hashedRegisterNUM
+        RegiNumber ,
       }).save();
       res.status(201).json({
         message: "You have successfully registered. Please login now",
