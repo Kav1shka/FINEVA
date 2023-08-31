@@ -1,6 +1,4 @@
-// const md5 =require ('crypto-js/md5') ;
 const md5 = require('crypto-js/md5');
-
 
 let merchantSecret  = 'MzUxNTA2NTc4NTI2MzU0Njc4NTI4Njg3NTE2NDA0MDA1OTM1OTMx';
 let merchantId      = '1223824';
@@ -41,8 +39,18 @@ switch(status_code){
        console.log("Transaction is Successful");
        // *** verification of payment status ***  
        //generate local md5 signature
-       var localMd5Sig = (md5(merchant_id+order_id+payhere_amount+payhere_currency+status_code+md5(process.env.PAYHERE_SECRET).toUpperCase())).toUpperCase();
-       if(localMd5Sig===req.body.md5sig){
+    //    var localMd5Sig = (md5(merchant_id+order_id+payhere_amount+payhere_currency+status_code+md5(process.env.PAYHERE_SECRET)));
+  var  md5sig = strtoupper(
+        md5 (
+            merchant_id + 
+            order_id + 
+            payhere_amount + 
+            payhere_currency + 
+            status_code + 
+            strtoupper(md5(merchant_secret)) 
+        ) 
+    )
+       if(md5sig===req.body.md5sig){
             console.log('Verified')
             isVerified=true;
            // update the database with successfull transation details here
