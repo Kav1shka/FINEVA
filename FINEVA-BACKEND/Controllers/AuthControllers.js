@@ -109,7 +109,9 @@ const authController = {
   // Driver login
   Driverlogin: async (req, res) => {
     try {
-      const { NIC, Password } = req.body;
+      const NIC = req.body.ID;
+      const Password = req.body.password;
+      //const { NIC, Password } = req.body;
       const errorMessage = DriverdloginValid(NIC, Password);
       if (errorMessage) return res.status(400).json({ message: errorMessage });
       const driver = await Driver.findOne({ NIC });
@@ -141,7 +143,7 @@ const authController = {
           message: "You have successfully logged in",
           Driver,
           token,
-          details,
+          //details,
         });
     } catch (error) {
       console.log(error);
@@ -152,7 +154,9 @@ const authController = {
   //PoliceOfficer Login 
   PoliceOfficerlogin: async (req, res) => {
     try {
-      const { RegiNumber, Password } = req.body;
+      const RegiNumber = req.body.ID;
+      const Password = req.body.password;
+      //const { RegiNumber, Password } = req.body;
       console.log(req.body);
       const errorMessage = OfficerloginValid(RegiNumber, Password);
       // console.log(errorMessage);
@@ -185,7 +189,7 @@ const authController = {
           message: "You have successfully logged in",
           PoliceOfficer,
           token,
-          details,
+          //details,
         });
     } catch (error) {
       console.log(error);
