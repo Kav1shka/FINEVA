@@ -5,14 +5,11 @@ const DriverRefSchema=new mongoose.Schema(
             type:String,
             required:true
         },
-        Province:{
+        LIN:{
             type:String,
             required:true
         },
-        District:{
-            type:String,
-            required:true
-        }
+
     }
 )
 const DriverRef=mongoose.model("DriverRef",DriverRefSchema);

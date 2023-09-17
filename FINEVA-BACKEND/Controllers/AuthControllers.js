@@ -1,5 +1,6 @@
 const { registerValidDriver, registerValidPoliceOfficer,DriverdloginValid,OfficerloginValid } = require("../Validations.js");
 const Driver = require("../Models/Driver.js");
+const DriverRef = require("../Models/driverRef.js");
 const PoliceOfficer = require("../Models/PoliceOfficer.js");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -15,6 +16,7 @@ const authController = {
       const Password = req.body.Password;
       const cfPassword = req.body.password2;
       const NIC = req.body.NIC;
+      const LIN = req.body.LIN;
       const Province = req.body.Province;
       const District  = req.body.District;
       const errorMessage = registerValidDriver(
@@ -24,8 +26,9 @@ const authController = {
       Password ,
       cfPassword,
       NIC ,
+      LIN ,
       Province ,
-      District 
+      District
       )
       if (errorMessage) return res.status(400).json({ message: errorMessage });
       const DriverExists = await Driver.findOne({ NIC });
@@ -39,6 +42,11 @@ const authController = {
           .status(400)
           .json({message: "Passwords do not match"})
       }
+      const RefDetail = await DriverRef.findOne({NIC}) || DriverRef.findOne({LIN});
+      console.log(RefDetail.NIC+ " + " +RefDetail.LIN);
+      if(NIC !== RefDetail.NIC || LIN !== RefDetail.LIN){
+        return res.status(400).json({message: "Invalid NIC or Licence Number!"});
+      }
       const hashedPassword = await bcrypt.hash(Password, 10);
       await new Driver({
         Email ,
@@ -46,6 +54,7 @@ const authController = {
         Lname ,
         Password :hashedPassword,
         NIC ,
+        LIN ,
         Province ,
         District 
       }).save();
@@ -81,7 +90,7 @@ const authController = {
       if (PoliceOFfficerExists) {
         return res
           .status(400)
-          .json({ message: "This email is already in use!!!!" });
+          .json({ message: "This Service ID is already in use!" });
       }
       if (Password !== cfPassword){
         return res
@@ -194,6 +203,26 @@ const authController = {
     } catch (error) {
       console.log(error);
       res.status(500).json({ message: error.message });
+    }
+  },
+
+  DriverReference: async (req, res) =>{
+    try{
+      const NIC = req.body.NIC;
+      const LIN = req.body.LIN;
+      const DriverRefExists = await DriverRef.findOne({NIC}) || DriverRef.findOne({LIN});
+      if (DriverRefExists) {
+        return res.status(400).json({message: "NIC exists"});
+      }
+      await new DriverRef({
+        NIC,
+        LIN
+      }).save();
+      res.status(201).json({message: "Data Added Successfully."});
+    }
+    catch(error){
+      console.log(error);
+      res.status(500).json({message: error.message})
     }
   },
 };

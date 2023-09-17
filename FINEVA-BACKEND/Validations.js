@@ -21,7 +21,7 @@ const registerValidPoliceOfficer = (Email, Fname,Lname,Password,Contact,RegiNumb
  
     const DriverdloginValid = (NIC, Password) =>{
       if (!NIC) return "Please enter your NIC";
-      if (!Password) return "Please enter your pas7sword";
+      if (!Password) return "Please enter your password";
     };
     const OfficerloginValid = (RegiNumber, password) =>{
       if (!RegiNumber) return "Please enter your Service ID";

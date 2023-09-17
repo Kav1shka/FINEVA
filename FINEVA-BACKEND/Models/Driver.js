@@ -25,6 +25,10 @@ const DriverSchema=new mongoose.Schema(
             type:String,
             required:true
         },
+        LIN:{
+            type:String,
+            required:true
+        },
         Province:{
             type:String,
             required:true
