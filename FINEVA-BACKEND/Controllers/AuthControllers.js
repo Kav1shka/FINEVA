@@ -1,4 +1,4 @@
-const { registerValidDriver, registerValidPoliceOfficer,DriverdloginValid,OfficerloginValid } = require("../Validations.js");
+const { registerValidDriver, registerValidPoliceOfficer, DriverdloginValid, OfficerloginValid } = require("../Validations.js");
 const Driver = require("../Models/Driver.js");
 const DriverRef = require("../Models/driverRef.js");
 const PoliceOfficer = require("../Models/PoliceOfficer.js");
