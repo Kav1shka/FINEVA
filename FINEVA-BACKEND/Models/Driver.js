@@ -15,17 +15,21 @@ const DriverSchema=new mongoose.Schema(
         },
         Password:{
             type:String,
-            required:false
+            required:true
         },
         Contact:{
             type:String,
-            required:false
+            required:true
         },
         NIC:{
             type:String,
             required:true
         },
         LIN:{
+            type:String,
+            required:true
+        },
+        Address:{
             type:String,
             required:true
         },
@@ -36,7 +40,15 @@ const DriverSchema=new mongoose.Schema(
         District:{
             type:String,
             required:true
-        }
+        },
+        valid:{
+            type:Boolean,
+            required:false,
+        },
+        Gender:{
+            type:String,
+            required:true
+        },
     }
 )
 const Driver=mongoose.model("Driver",DriverSchema);

@@ -19,6 +19,9 @@ const authController = {
       const LIN = req.body.LIN;
       const Province = req.body.Province;
       const District  = req.body.District;
+      const Address = req.body.Address;
+      const Gender = req.body.Gender;
+      const Contact = req.body.Contact;
       const errorMessage = registerValidDriver(
       Email ,
       Fname ,
@@ -28,7 +31,10 @@ const authController = {
       NIC ,
       LIN ,
       Province ,
-      District
+      District,
+      Gender,
+      Address,
+      Contact,
       )
       if (errorMessage) return res.status(400).json({ message: errorMessage });
       const DriverExists = await Driver.findOne({ NIC });
@@ -43,7 +49,7 @@ const authController = {
           .json({message: "Passwords do not match"})
       }
       const RefDetail = await DriverRef.findOne({NIC}) || DriverRef.findOne({LIN});
-      console.log(RefDetail.NIC+ " + " +RefDetail.LIN);
+     // console.log(RefDetail.NIC+ " + " +RefDetail.LIN);
       if(NIC !== RefDetail.NIC || LIN !== RefDetail.LIN){
         return res.status(400).json({message: "Invalid NIC or Licence Number!"});
       }
@@ -56,7 +62,10 @@ const authController = {
         NIC ,
         LIN ,
         Province ,
-        District 
+        District ,
+        Gender,
+        Contact,
+        Address,
       }).save();
       res.status(201).json({
         message: "You have successfully registered. Please login now",
@@ -76,6 +85,8 @@ const authController = {
       const cfPassword = req.body.password2;
       const Contact = req.body.Contact;
       const RegiNumber = req.body.RegiNumber;
+      const Rank = req.body.Rank;
+      const Station = req.body.Station;
       const errorMessage = registerValidPoliceOfficer(
       Email ,
       Fname ,
@@ -83,7 +94,9 @@ const authController = {
       Password ,
       cfPassword,
       Contact ,
-      RegiNumber 
+      RegiNumber,
+      Rank,
+      Station,
       )
       if (errorMessage) return res.status(400).json({ message: errorMessage });
       const PoliceOFfficerExists = await PoliceOfficer.findOne({ RegiNumber });
@@ -105,6 +118,8 @@ const authController = {
         Password : hashedPassword,
         Contact ,
         RegiNumber ,
+        Rank,
+        Station,
       }).save();
       res.status(201).json({
         message: "You have successfully registered. Please login now",
@@ -128,12 +143,11 @@ const authController = {
       const details =async()=>{
         return await Driver.findOne(Driver);
       } 
-      if (!driver)
+      if (!driver){
         return res.status(400).json({ message: "Not registered NIC" });
-
+      }
       const match = await bcrypt.compare(Password, driver.Password);
 
-      console.log(match);
       if (!match) {
         return res.status(400).json({ message: "Invalid NIC or password" });
       }
@@ -144,8 +158,6 @@ const authController = {
 
       Driver.password = undefined;
 
-      // Customer.password = undefined;
-      // Customer.password = undefined;
       res
         .status(200)
         .json({
@@ -175,7 +187,7 @@ const authController = {
       console.log(FoundPoliceOfficer);
       // const details = await PoliceOfficer.findOne(FoundPoliceOfficer);
       if (!FoundPoliceOfficer)
-        return res.status(400).json({ message: "Not registered NIC" });
+        return res.status(400).json({ message: "Not registered Service Number!" });
 
       const match = await bcrypt.compare(Password, FoundPoliceOfficer.Password);
 
@@ -203,26 +215,6 @@ const authController = {
     } catch (error) {
       console.log(error);
       res.status(500).json({ message: error.message });
-    }
-  },
-
-  DriverReference: async (req, res) =>{
-    try{
-      const NIC = req.body.NIC;
-      const LIN = req.body.LIN;
-      const DriverRefExists = await DriverRef.findOne({NIC}) || DriverRef.findOne({LIN});
-      if (DriverRefExists) {
-        return res.status(400).json({message: "NIC exists"});
-      }
-      await new DriverRef({
-        NIC,
-        LIN
-      }).save();
-      res.status(201).json({message: "Data Added Successfully."});
-    }
-    catch(error){
-      console.log(error);
-      res.status(500).json({message: error.message})
     }
   },
 };

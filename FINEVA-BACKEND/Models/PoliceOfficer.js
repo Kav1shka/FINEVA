@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const PoliceOfficerSchema=new mongoose.Schema(
+const PoliceOfficerSchema = new mongoose.Schema(
     {
         Email:{
             type:String,
@@ -23,6 +23,14 @@ const PoliceOfficerSchema=new mongoose.Schema(
             required:true
         },
         RegiNumber:{
+            type:String,
+            required:true
+        },
+        Rank:{
+            type:String,
+            required:true
+        },
+        Station:{
             type:String,
             required:true
         }

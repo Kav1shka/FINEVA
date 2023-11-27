@@ -21,12 +21,17 @@ mongoose.connect(url, (err) => {
   console.log("MongoDB is connected...");
 });
 
-// app.use("/users", users)
 const AuthRouter = require("./Routes/AuthRoute");
 app.use("/User", AuthRouter);
 
 const PaymentRouter=require("./Routes/PaymentRoute");
 app.use("/payment",PaymentRouter);
+
+const PoliceRouter = require ("./Routes/PoliceRoute");
+app.use("/Police", PoliceRouter);
+
+const DriverRouter = require("./Routes/DriverRoute");
+app.use("/Driver", DriverRouter);
 
 app.listen(PORT, () => {
   console.log(`server running at http://localhost:${PORT}`);

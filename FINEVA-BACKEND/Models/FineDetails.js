@@ -20,9 +20,8 @@ const FineDetailsSchema=new mongoose.Schema(
         },
         PayStatus:{
             type:String,
-            required:true
         },
-        NIC:{
+        LIN:{
             type:String,
             required:true
         }
