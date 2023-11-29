@@ -2,29 +2,38 @@ const mongoose = require("mongoose");
 
 const FineDetailsSchema=new mongoose.Schema(
     {
-        FineDate:{
+        fineDateTime:{
             type:String,
             required:true
         }, 
-        FineDesc:{
+        natureOfOffence:{
             type:String,
             required:true
         },
-        FineAmount:{
+        fineAmount:{
             type:String,
             required:true
         },
-        VehicleNum:{
+        vehicleNumber:{
             type:String,
             required:true
         },
         PayStatus:{
-            type:String,
+            type:Boolean,
         },
         LIN:{
             type:String,
             required:true
-        }
+        },
+        place:{
+            type:String,
+            required:true
+        },
+        fineName:{
+            type:String,
+            required:true
+        },
+        
     }
 )
 const FineDetails=mongoose.model("FineDetails",FineDetailsSchema);
