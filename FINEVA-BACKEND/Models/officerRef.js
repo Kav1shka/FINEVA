@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const OfficerRefSchema=new mongoose.Schema(
     {
-        RegNumber:{
+        RegiNumber:{
             type:String,
             required:true
         },
@@ -16,5 +16,5 @@ const OfficerRefSchema=new mongoose.Schema(
 
     }
 )
-const OfficerRef = mongoose.model("DriverRef",DriverRefSchema);
+const OfficerRef = mongoose.model("OfficerRef",OfficerRefSchema);
 module.exports = OfficerRef;

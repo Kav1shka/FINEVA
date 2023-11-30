@@ -33,6 +33,9 @@ app.use("/Police", PoliceRouter);
 const DriverRouter = require("./Routes/DriverRoute");
 app.use("/Driver", DriverRouter);
 
+const FineRouter = require ("./Routes/FineRoute");
+app.use("/Fine", FineRouter);
+
 app.listen(PORT, () => {
   console.log(`server running at http://localhost:${PORT}`);
 });

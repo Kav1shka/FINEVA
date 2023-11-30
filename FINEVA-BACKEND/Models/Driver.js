@@ -49,6 +49,7 @@ const DriverSchema=new mongoose.Schema(
             type:String,
             required:true
         },
+
     }
 )
 const Driver=mongoose.model("Driver",DriverSchema);

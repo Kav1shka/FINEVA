@@ -4,6 +4,7 @@ const DriverRef = require("../Models/driverRef.js");
 const PoliceOfficer = require("../Models/PoliceOfficer.js");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const OfficerRef = require("../Models/officerRef.js");
 
 const authController = {
   
@@ -87,6 +88,7 @@ const authController = {
       const RegiNumber = req.body.RegiNumber;
       const Rank = req.body.Rank;
       const Station = req.body.Station;
+      console.log(req.body);
       const errorMessage = registerValidPoliceOfficer(
       Email ,
       Fname ,
@@ -99,6 +101,10 @@ const authController = {
       Station,
       )
       if (errorMessage) return res.status(400).json({ message: errorMessage });
+      const OfficerRefMatch = await OfficerRef.findOne({RegiNumber});
+      if(OfficerRefMatch){
+        return res.status(400).json({message: "Invalid Registration Number"});
+      }
       const PoliceOFfficerExists = await PoliceOfficer.findOne({ RegiNumber });
       if (PoliceOFfficerExists) {
         return res
@@ -162,7 +168,7 @@ const authController = {
         .status(200)
         .json({
           message: "You have successfully logged in",
-          Driver,
+          driver,
           token,
           //details,
         });
@@ -208,7 +214,7 @@ const authController = {
         .status(200)
         .json({
           message: "You have successfully logged in",
-          PoliceOfficer,
+          FoundPoliceOfficer,
           token,
           //details,
         });

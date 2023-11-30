@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 
 const FineDetailsSchema=new mongoose.Schema(
     {
+        fineID:{
+            type:String,
+            required:true
+        },
         fineDateTime:{
             type:String,
             required:true
@@ -29,11 +33,42 @@ const FineDetailsSchema=new mongoose.Schema(
             type:String,
             required:true
         },
-        fineName:{
+        fineList:{
+            type:[],
+            required:true
+        },
+        DriverFirstName:{
             type:String,
             required:true
         },
-        
+        DriverLastName:{
+            type:String,
+            required:true
+        },
+        DriverEmail:{
+            type:String,
+            required:true
+        },
+        DriverContact:{
+            type:String,
+            required:true
+        },
+        DriverAddress:{
+            type:String,
+            required:true
+        },
+        PoliceOfficerName:{
+            type:String,
+            required:true
+        },
+        PoliceOfficerRank:{
+            type:String,
+            required:true
+        },
+        PoliceStation:{
+            type:String,
+            required:true
+        }
     }
 )
 const FineDetails=mongoose.model("FineDetails",FineDetailsSchema);
