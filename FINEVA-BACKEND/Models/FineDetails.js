@@ -24,6 +24,7 @@ const FineDetailsSchema=new mongoose.Schema(
         },
         PayStatus:{
             type:Boolean,
+            required:true
         },
         LIN:{
             type:String,

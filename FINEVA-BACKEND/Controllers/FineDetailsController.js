@@ -4,6 +4,7 @@ const PoliceOfficer = require("../Models/PoliceOfficer.js");
 const Fine = require("../Models/FineDetails.js");
 const { nanoid } = require("nanoid");
 const { fineValidator } = require("../Validations.js");
+const FineDetails = require("../Models/FineDetails.js");
 
 const FineDetailsController = {
   addFine: async (req, res) => {
@@ -13,7 +14,7 @@ const FineDetailsController = {
       const natureOfOffence = req.body.natureOfOffence;
       const fineAmount = req.body.fineAmount;
       const vehicleNumber = req.body.vehicleNumber;
-      const payState = req.body.payState;
+      const PayStatus = req.body.payState;
       const LIN = req.body.LIN;
       const place = req.body.place;
       const DriverFirstName = req.body.DriverFirstName;
@@ -42,7 +43,7 @@ const FineDetailsController = {
         natureOfOffence,
         fineAmount,
         vehicleNumber,
-        payState,
+        PayStatus,
         LIN,
         place,
         DriverFirstName,
@@ -58,6 +59,17 @@ const FineDetailsController = {
       
     } catch (error) {
       res.status(500).json({ message: error.message });
+    }
+  },
+
+  getFine: async (req, res)=>{
+    try{
+        const LIN = req.body.LIN;
+
+        const fine = await FineDetails.find({"LIN":LIN});
+        res.status(200).json({message: "Fine retrieved", fine});
+    }catch(error){
+        res.status(500).json({message: error.message});
     }
   },
 };

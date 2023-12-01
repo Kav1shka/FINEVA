@@ -1,5 +1,6 @@
 const Driver = require("../Models/Driver.js");
 const DriverRef = require("../Models/driverRef.js");
+const FineDetails = require("../Models/FineDetails.js");
 const PoliceOfficer = require("../Models/PoliceOfficer.js");
 
 const DriverController = {
