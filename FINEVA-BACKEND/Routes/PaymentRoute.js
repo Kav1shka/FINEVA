@@ -1,10 +1,10 @@
-const express=require("express");
-const router = express.Router();
+// const express=require("express");
+// const router = express.Router();
 
-const {checkout2}=require("../payhere");
+// const {}=require("../payhere");
 
-// router.post("/Checkout1",checkout);
+// // router.post("/Checkout1",checkout);
 
-router.get("/Checkout2",checkout2);
+// router.get("/Checkout2",checkout2);
 
-module.exports= router;
+// module.exports= router;

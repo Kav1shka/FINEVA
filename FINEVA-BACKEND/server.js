@@ -24,8 +24,8 @@ mongoose.connect(url, (err) => {
 const AuthRouter = require("./Routes/AuthRoute");
 app.use("/User", AuthRouter);
 
-const PaymentRouter=require("./Routes/PaymentRoute");
-app.use("/payment",PaymentRouter);
+// const PaymentRouter=require("./Routes/PaymentRoute");
+// app.use("/payment",PaymentRouter);
 
 const PoliceRouter = require ("./Routes/PoliceRoute");
 app.use("/Police", PoliceRouter);
