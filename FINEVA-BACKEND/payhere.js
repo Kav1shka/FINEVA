@@ -9,13 +9,23 @@ let hashedSecret    = md5(merchantSecret).toString().toUpperCase();
 let amountFormated  = parseFloat( amount ).toLocaleString( 'en-us', { minimumFractionDigits : 2 } ).replaceAll(',', '');
 let currency        = 'LKR';
 let hash            = md5(merchantId + orderId + amountFormated + currency + hashedSecret).toString().toUpperCase();
+let first_name="Kavishka";
+let last_name= "Nilan De Alwis";
+let email="kavishkanilan56@gmail.com";
+let phone= "0775128493";
+let address="No.1, Galle Road";
+let city= "Colombo";
+let country="Sri Lanka";
+let delivery_address= "No. 46, Galle road, Kalutara South";
+let delivery_city= "Kalutara";
+let delivery_country= "Sri Lanka";
 
 console .log(hash);
 
-var isVerified;  
+// var isVerified;  
 
 const payment={
-checkout :async(req,res)=>{
+checkout1 :async(req,res)=>{
     isVerified = false;
     var merchant_id = req.body.merchant_id; // PayHere Merchant ID of the merchant
     var orderId = req.body.orderId;     // Order ID sent by Merchant to Checkout page
@@ -73,6 +83,17 @@ switch(status_code){
 }
 res.end();
 },
+
+checkout2: async(req,res)=>{
+
+    try{
+    res.status(200).json({ "first_name":"Kavishka" });
+    }catch(error){
+        return res.status(500).json({ message: error.message });
+    }
+
+console.log(hash);
+}
 
 };
 module.exports = payment;

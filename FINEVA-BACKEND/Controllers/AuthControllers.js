@@ -6,6 +6,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const OfficerRef = require("../Models/officerRef.js");
 
+
 const authController = {
   
   //Driver register
