@@ -1,7 +1,7 @@
 // const md5 =require ('crypto-js/md5') ;
 const md5 = require('crypto-js/md5');
 
-let merchantSecret  = 'MzUxNTA2NTc4NTI2MzU0Njc4NTI4Njg3NTE2NDA0MDA1OTM1OTMx';
+let merchantSecret  = 'MzA3NjA0ODY2NTU1NzQyODYzMDgwMDYwOTAxNTM5NjI3MDE4Mw==';
 let merchantId      = '1223824';
 let orderId         = '12345';
 let amount          = 1000.00;
