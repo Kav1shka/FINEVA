@@ -42,5 +42,21 @@ DriverReference: async (req, res) =>{
       res.status(500).json({ message: error.message });
     }
   },
+
+  updateDriver: async (req,res) =>{
+    try{
+      const LIN = req.body.LIN;
+      const Contact = req.body.Contact;
+      const Address = req.body.Address;
+
+      await Driver.updateMany({LIN:LIN},{
+        $set:{Contact:Contact,Address:Address}
+      })
+      res.status(200).json({message: "Profile Updated!"});
+    }
+    catch(error){
+      res.status(500).json({message: error.message});
+    }
+  },
 }
 module.exports = DriverController;

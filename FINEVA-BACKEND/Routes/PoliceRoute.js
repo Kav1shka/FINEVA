@@ -1,8 +1,10 @@
 const express = require ("express");
 const router = express.Router();
 
-const {OfficerReference} = require("../Controllers/PoliceOfficerControllers");
+const {OfficerReference,updateOfficer,officerSearch} = require("../Controllers/PoliceOfficerControllers");
 
-router.post("/OfficerRef", OfficerReference);   
+router.post("/OfficerRef", OfficerReference);
+router.post("/updateOfficer",updateOfficer);   
+router.post("/officerSearch",officerSearch);
 
 module.exports = router;
